@@ -1,12 +1,59 @@
 @import 'fonts';
 @import 'vars';
+@import 'mixins';
 @import 'global';
 
-//* header start
+//* squared start
+
+.squared {
+
+   &__wrapper {
+      width: 1200px;
+      height: 1200px;
+      background-color: $grey;
+      @include flex;
+      align-content: center;
+      flex-wrap: wrap; 
+   }
+
+   &__inner--blue,
+   &__content--blue {
+      background-color: $blue;
+   }
+
+   &__inner--yellow,
+   &__content--yellow {
+      background-color: $yellow;
+      
+   }
+
+   &__inner--pink,
+   &__content--pink {
+      background-color: $pink;
+   }
+
+   &__inner--green,
+   &__content--green {
+      background-color: $green;
+   }
+}
+
+.squared__content--yellow {
+   right: 0;
+   bottom: 0;
+}
+
+.squared__content--blue {
+   bottom: 0;
+}
+
+.squared__content--green {
+   right: 0;
+}
 
 
 
-//* header end
+//* squared end
 
 
 

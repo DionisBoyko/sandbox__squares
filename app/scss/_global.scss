@@ -14,9 +14,32 @@ a{
 
 
 body {
-   
+   font-family: 'Roboto', sans-serif;
+   color: #fff;
+   font-style: normal;
+   font-weight: 400;
+   font-size: 100px;
+   line-height: 100px;
 }
 .container {
- 
+   @include flex;
+   max-width: 1230px;
+   width: 100%;
+   padding: 15px;
+}
+
+.squared__inner {
+   width: 500px;
+   height: 500px;
+   margin: 7px;
+   position: relative;
+}
+
+.squared__content {
+   width: 250px;
+   height: 250px;
+   position: absolute;
+   @include flex;
+   align-items: center;
 }
 
