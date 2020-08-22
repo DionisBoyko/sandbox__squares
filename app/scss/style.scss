@@ -24,7 +24,6 @@
    &__inner--yellow,
    &__content--yellow {
       background-color: $yellow;
-      
    }
 
    &__inner--pink,
@@ -36,22 +35,115 @@
    &__content--green {
       background-color: $green;
    }
+
+   &__content {
+
+      &::before {
+         content: '';
+         position: absolute;
+         transition: 1s;
+      }
+
+      &--yellow::before,
+      &--blue::before {
+         width: 190px;
+         height: 190px;
+         border: 30px solid #fff;
+         top: -250px;
+      }
+   }
 }
 
 .squared__content--yellow {
    right: 0;
    bottom: 0;
+
+   &::before {
+      background-color: $green;
+      left: -250px;
+   }
+
+   &:hover {
+      &::before {
+         border-radius: 50%;
+         background-color: $pink;
+         left: 0;
+      }
+   }
 }
+
 
 .squared__content--blue {
    bottom: 0;
+
+   &::before {
+      border-radius: 50%;
+      background-color: $pink;
+      left: 250px;
+   }
+
+   &:hover {
+      &::before {
+         background-color: $green;
+         border-radius: 0;
+         top: 0;
+      }
+   }
 }
 
 .squared__content--green {
    right: 0;
+
+   &::before {
+      width: 160px;
+      height: 160px;
+      transform: rotate(-45deg);
+      border: 20px solid #fff;
+      background-color: $blue;
+      left:-208px;
+      top: 257px;
+   }
+
+   &:hover {
+      &::before {
+         background-color: $yellow;
+         transform: rotate(0deg);
+      }
+   }
 }
 
+.squared__content--pink {
+   &::before,
+   &::after {
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 0 0 250px 250px;
+      border-color: transparent transparent #fff transparent;
+      left:250px;
+      top: 250px;
+   }
 
+   &::after {
+      content: '';
+      position: absolute;
+      border-width: 0 0 150px 150px;
+      border-color: transparent transparent $yellow transparent;
+      left:325px;
+      top: 320px;
+   }
+
+   &:hover {
+      &::after,
+      &::before {
+         transform: rotate(180deg);
+      }
+      &::after {
+         left: 280px;
+         top: 280px;
+      }
+   }
+}
 
 //* squared end
 
